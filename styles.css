@@ -195,29 +195,59 @@ nav a::after {
 nav a:hover::after,
 nav a.active::after { transform: scaleX(1); }
 
-/* Respect users who turn animations off */
-@media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; translate: none; transition: none; }
-  html { scroll-behavior: auto; }
+/* PROJECT CARDS */
+.repo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
 }
-html { scroll-behavior: smooth; }
-
+.repo-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.75rem;
+    border: 1px solid rgba(31, 61, 44, 0.2);
+    border-top: 3px solid #1f3d2c;
+    background: rgba(255, 255, 255, 0.35);
+    text-decoration: none;
+    color: inherit;
+    opacity: 1;
+    visibility: visible;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.repo-card:hover,
+.repo-card:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(31, 61, 44, 0.14);
+}
+.repo-card h3 {
+    font-family: var(--serif, Georgia, serif);
+    font-size: 1.5rem;
+    margin: 0;
+}
 .repo-role {
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.14em;
-    color: var(--tan);
+    color: var(--tan, #b49a6b);
     margin: 0;
 }
-.repo-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.25rem;
+.repo-desc {
+    font-size: 0.94rem;
+    line-height: 1.7;
+    color: #536457;
+    margin: 0;
+    flex-grow: 1;
 }
+.repo-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.25rem; }
 .repo-tags span {
     font-size: 0.72rem;
     padding: 0.25rem 0.65rem;
-    border: 1px solid var(--line);
-    color: var(--green);
+    border: 1px solid rgba(31, 61, 44, 0.2);
+    color: #1f3d2c;
+}
+
+@media (max-width: 700px) {
+    .repo-grid { grid-template-columns: 1fr; }
 }
