@@ -201,3 +201,23 @@ nav a.active::after { transform: scaleX(1); }
   html { scroll-behavior: auto; }
 }
 html { scroll-behavior: smooth; }
+
+.repo-role {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--tan);
+    margin: 0;
+}
+.repo-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+.repo-tags span {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.65rem;
+    border: 1px solid var(--line);
+    color: var(--green);
+}
