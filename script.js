@@ -1,78 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const BOOKING_URL = "PASTE_YOUR_GOOGLE_BOOKING_LINK_HERE";
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* 1. Scroll reveal (staggered) */
-  const revealEls = document.querySelectorAll(".value-card, .about-intro, .values-heading, .giving-section");
-  revealEls.forEach((el, i) => {
-    el.classList.add("reveal");
-    el.style.transitionDelay = reduceMotion ? "0s" : `${(i % 3) * 0.12}s`;
-  });
-  const revealObs = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => revealObs.observe(el));
-
-  /* 2. Scroll progress bar */
-  const bar = document.createElement("div");
-  bar.className = "scroll-progress";
-  document.body.appendChild(bar);
-
-  /* 5. Header shadow (change "header" if your header uses a different tag) */
-  const header = document.querySelector("header");
-
-  const onScroll = () => {
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
-    if (header) header.classList.toggle("scrolled", window.scrollY > 10);
-  };
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-
-  /* 3. Active nav link */
-  const navLinks = document.querySelectorAll('nav a[href^="#"]');
-  const sections = [...navLinks]
-    .map(a => document.querySelector(a.getAttribute("href")))
-    .filter(Boolean);
-  const navObs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(a =>
-          a.classList.toggle("active", a.getAttribute("href") === "#" + entry.target.id)
-        );
-      }
-    });
-  }, { rootMargin: "-45% 0px -50% 0px" });
-  sections.forEach(s => navObs.observe(s));
-
-  /* 4. Count-up numbers: use <div class="giving-number" data-count="10" data-suffix="%">0%</div> */
-  const counters = document.querySelectorAll("[data-count]");
-  const countObs = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target;
-      const target = parseFloat(el.dataset.count);
-      const suffix = el.dataset.suffix || "";
-      const duration = reduceMotion ? 0 : 1400;
-      const start = performance.now();
-      const tick = now => {
-        const p = duration ? Math.min((now - start) / duration, 1) : 1;
-        const eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(target * eased) + suffix;
-        if (p < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-      obs.unobserve(el);
-    });
-  }, { threshold: 0.6 });
-  counters.forEach(c => countObs.observe(c));
-});
-
-  /* ---------- PROJECT CARDS ---------- */
+  /* ---------- PROJECT CARDS (first, so nothing can block it) ---------- */
   const PROJECTS = [
     {
       title: "Specialty Pharma Revenue Dashboard",
@@ -80,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       date: "March 2026",
       desc: "Interactive Power BI dashboard analyzing 8 quarters of epinephrine auto-injector market data across 3 products. A pandas pipeline in Python builds the clean dataset, and KPI cards, trendlines and slicers show competitive market share.",
       tags: ["Power BI", "Python", "pandas"],
-      url: "" // add a link if you publish it
+      url: ""
     },
     {
       title: "AAPL Trend & Volatility Tracker",
@@ -108,8 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
-  const grid = document.getElementById("repo-grid");
-  if (grid) {
+  const repoGrid = document.getElementById("repo-grid");
+  if (repoGrid) {
     PROJECTS.forEach((p, i) => {
       const card = document.createElement(p.url ? "a" : "article");
       card.className = "repo-card";
@@ -140,6 +70,96 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       card.append(h, role, desc, tags);
-      grid.appendChild(card);
+      repoGrid.appendChild(card);
     });
+  } else {
+    console.warn('No element with id="repo-grid" found.');
   }
+
+  /* ---------- SCROLL REVEAL ---------- */
+  const revealEls = document.querySelectorAll(".value-card, .about-intro, .values-heading, .giving-section");
+  revealEls.forEach((el, i) => {
+    el.classList.add("reveal");
+    el.style.transitionDelay = reduceMotion ? "0s" : `${(i % 3) * 0.12}s`;
+  });
+  const revealObs = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObs.observe(el));
+
+  /* ---------- PROGRESS BAR + HEADER SHADOW + BOOK BUTTON ---------- */
+  const bar = document.createElement("div");
+  bar.className = "scroll-progress";
+  document.body.appendChild(bar);
+
+  const header = document.querySelector("header");
+  const btn = document.getElementById("book-call");
+  const contact = document.getElementById("contact");
+
+  if (btn) {
+    if (!BOOKING_URL.startsWith("PASTE")) {
+      btn.href = BOOKING_URL;
+    } else {
+      btn.removeAttribute("target");
+    }
+  }
+
+  const onScroll = () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
+    if (header) header.classList.toggle("scrolled", window.scrollY > 10);
+
+    if (btn) {
+      const pastHero = window.scrollY > window.innerHeight * 0.6;
+      const nearContact = contact
+        ? contact.getBoundingClientRect().top < window.innerHeight * 0.6
+        : false;
+      btn.classList.toggle("show", pastHero && !nearContact);
+    }
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  onScroll();
+
+  /* ---------- ACTIVE NAV LINK ---------- */
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  const sections = [...navLinks]
+    .map(a => document.querySelector(a.getAttribute("href")))
+    .filter(Boolean);
+  const navObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a =>
+          a.classList.toggle("active", a.getAttribute("href") === "#" + entry.target.id)
+        );
+      }
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  sections.forEach(s => navObs.observe(s));
+
+  /* ---------- COUNT-UP NUMBERS ---------- */
+  const counters = document.querySelectorAll("[data-count]");
+  const countObs = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseFloat(el.dataset.count);
+      const suffix = el.dataset.suffix || "";
+      const duration = reduceMotion ? 0 : 1400;
+      const start = performance.now();
+      const tick = now => {
+        const p = duration ? Math.min((now - start) / duration, 1) : 1;
+        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      obs.unobserve(el);
+    });
+  }, { threshold: 0.6 });
+  counters.forEach(c => countObs.observe(c));
+});
