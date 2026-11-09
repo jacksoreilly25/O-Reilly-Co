@@ -59,3 +59,95 @@ footer { text-align: center; padding: 3rem 8vw; border-top: 1px solid var(--line
   .nav nav a:not(.btn-outline) { display: none; }
   .section { padding: 5rem 7vw; }
 }
+
+:root {
+    --green: #1f3d2c;
+    --cream: #f6f1e6;
+    --tan: #b49a6b;
+    --line: rgba(31, 61, 44, 0.2);
+    --serif: Georgia, "Times New Roman", serif;
+}
+
+/* ABOUT & COMPANY VALUES */
+.about-section { padding-top: 7rem; padding-bottom: 7rem; }
+.about-intro { max-width: 45rem; margin-bottom: 5rem; }
+.values-heading { margin-bottom: 2.5rem; }
+.values-heading h2 { margin-bottom: 0; }
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem 2rem;
+}
+.value-card {
+    border-top: 1px solid var(--line);
+    padding-top: 1.5rem;
+    transition: transform 0.25s ease;
+}
+.value-card:hover { transform: translateY(-4px); }
+.value-card .num {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--tan);
+    margin-bottom: 1rem;
+}
+.value-card h3 { font-size: 1.9rem; margin-bottom: 0.25rem; }
+.value-subtitle {
+    color: var(--tan);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.value-card p:last-child {
+    font-size: 0.94rem;
+    line-height: 1.85;
+    color: #536457;
+}
+
+/* CHARITABLE COMMITMENT */
+.giving-section {
+    margin-top: 7rem;
+    padding: 4rem;
+    background: var(--green);
+    color: var(--cream);
+}
+.giving-section .eyebrow { color: var(--tan); margin-bottom: 2.5rem; }
+.giving-content {
+    display: grid;
+    grid-template-columns: 0.8fr 2fr;
+    align-items: center;
+    gap: 3rem;
+}
+.giving-number {
+    font-family: var(--serif);
+    font-size: clamp(5rem, 12vw, 9rem);
+    line-height: 1;
+    color: var(--cream);
+    letter-spacing: -0.05em;
+}
+.giving-text h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
+.giving-text p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: rgba(246, 241, 230, 0.85);
+    max-width: 42rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+    .values-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2.5rem 1.5rem;
+    }
+    .giving-content { grid-template-columns: 1fr; gap: 1.5rem; }
+    .giving-section { padding: 3rem; }
+}
+@media (max-width: 600px) {
+    .values-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .giving-section { padding: 2rem 1.5rem; margin-top: 4rem; }
+    .giving-number { font-size: 6rem; }
+    .about-intro { margin-bottom: 3.5rem; }
+    .values-heading { margin-bottom: 2rem; }
+}
