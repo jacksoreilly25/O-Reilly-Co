@@ -11,13 +11,21 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <header class="nav">
-    <a href="#top" class="monogram" aria-label="O’Reilly & Co. home"><span class="o">O</span><span class="c">C</span></a>
-    <nav>
+    <nav class="nav-left">
       <a href="#services">Services</a>
       <a href="#approach">Approach</a>
       <a href="#about">About</a>
+    </nav>
+
+    <a href="#top" class="brand" aria-label="O’Reilly & Co. home">
+      <span class="brand-word">O’Reilly &amp; Co</span>
+      <svg class="brand-mark" viewBox="0 0 185 204" aria-hidden="true">
+        <path fill-rule="evenodd" d="M36.1 15.2C33.2 16.9 31.8 18.3 29.9 19.9C28.0 21.4 26.9 22.1 24.8 24.6C22.6 27.1 18.8 32.0 16.9 34.8C14.9 37.5 14.2 39.2 13.1 41.4C12.1 43.5 11.3 45.2 10.5 47.5C9.7 49.8 8.7 52.8 8.1 55.0C7.5 57.2 7.2 58.6 6.9 60.9C6.5 63.2 6.1 66.0 5.9 68.9C5.7 71.8 5.4 74.4 5.6 78.1C5.8 81.8 6.3 86.8 7.1 91.0C7.9 95.2 9.2 99.9 10.5 103.5C11.8 107.1 13.3 110.1 14.6 112.8C16.0 115.4 17.2 117.2 18.6 119.2C20.1 121.3 21.9 123.5 23.4 125.2C24.9 127.0 25.7 127.9 27.5 129.5C29.3 131.1 32.0 133.3 34.1 134.8C36.2 136.2 37.1 137.0 40.0 138.4C42.9 139.8 47.0 141.8 51.4 143.0C55.8 144.2 63.8 145.2 66.5 145.9C69.2 146.6 66.9 145.4 67.5 147.1C68.1 148.8 69.1 153.5 70.0 156.1C70.9 158.8 71.8 160.6 72.9 162.9C74.0 165.1 75.1 167.4 76.5 169.6C77.9 171.9 79.0 173.7 81.2 176.2C83.5 178.8 87.5 182.7 90.0 184.9C92.5 187.0 94.1 187.9 96.1 189.1C98.2 190.4 100.0 191.4 102.2 192.4C104.5 193.4 106.9 194.3 109.6 195.1C112.4 195.9 116.4 196.7 118.6 197.1C120.8 197.5 120.2 197.5 122.8 197.5C125.3 197.5 130.6 197.5 133.8 197.2C136.9 197.0 138.9 196.5 141.5 195.9C144.1 195.2 147.2 194.2 149.4 193.4C151.6 192.5 152.8 191.9 154.6 190.9C156.4 189.9 158.1 189.0 160.1 187.4C162.2 185.8 164.8 183.6 167.0 181.1C169.2 178.6 171.5 175.5 173.4 172.4C175.3 169.2 177.6 164.2 178.4 162.2C179.2 160.3 178.4 161.0 178.1 160.5C177.9 160.0 177.7 159.9 176.9 159.5C176.1 159.1 174.2 158.2 173.4 158.0C172.5 157.8 172.9 156.9 171.9 158.5C170.8 160.1 168.7 165.0 167.1 167.5C165.6 170.0 164.1 171.9 162.6 173.6C161.1 175.4 159.9 176.7 158.1 178.1C156.4 179.5 153.9 181.1 152.1 182.1C150.3 183.2 149.4 183.7 147.4 184.4C145.4 185.1 142.1 186.0 140.2 186.4C138.4 186.8 138.4 186.9 136.1 186.9C133.9 186.9 129.4 186.9 126.6 186.5C123.9 186.1 121.5 185.3 119.5 184.6C117.5 183.9 116.6 183.5 114.6 182.4C112.7 181.2 109.8 179.3 107.9 177.8C106.0 176.2 105.0 175.3 103.2 173.2C101.5 171.2 99.0 167.8 97.5 165.5C96.0 163.2 95.6 162.4 94.5 159.8C93.4 157.1 91.6 152.2 90.8 149.5C89.9 146.8 89.6 144.6 89.6 143.4C89.6 142.1 89.6 142.7 90.6 142.1C91.7 141.6 93.8 141.0 95.9 140.0C97.9 139.0 100.5 137.7 102.9 136.2C105.2 134.8 107.3 133.4 109.9 131.1C112.5 128.8 116.1 125.2 118.5 122.4C120.9 119.6 122.4 117.1 124.0 114.4C125.6 111.6 126.9 109.2 128.2 105.8C129.6 102.3 131.0 97.4 131.9 93.9C132.7 90.3 133.1 88.6 133.4 84.4C133.6 80.1 133.3 71.4 133.4 68.5C133.4 65.6 133.6 67.5 133.8 67.1C133.9 66.8 133.6 66.5 134.5 66.5C135.4 66.5 137.7 66.8 139.2 67.2C140.8 67.7 142.4 68.5 144.0 69.4C145.6 70.3 147.3 71.6 148.6 72.6C149.9 73.7 150.5 74.2 151.8 75.6C153.0 77.0 154.6 78.8 156.0 81.1C157.4 83.4 159.2 86.9 160.4 89.4C161.5 91.8 161.9 92.8 162.9 95.8C163.9 98.8 165.4 105.2 166.4 107.4C167.3 109.5 167.5 108.4 168.5 108.6C169.5 108.8 171.3 108.7 172.1 108.6C172.9 108.5 173.0 108.5 173.4 108.1C173.7 107.8 174.1 110.5 174.2 106.5C174.4 102.5 174.1 88.1 174.0 83.9C173.9 79.7 173.6 84.1 173.5 81.2C173.4 78.4 173.6 69.9 173.5 66.6C173.4 63.4 173.2 62.8 172.8 61.9C172.3 61.0 172.1 61.2 171.0 61.1C169.9 61.1 167.7 60.7 166.2 61.5C164.8 62.3 163.2 65.1 162.4 65.9C161.5 66.6 162.6 66.7 161.1 66.1C159.6 65.5 155.6 63.4 153.2 62.4C150.9 61.4 149.0 60.7 147.1 60.1C145.3 59.5 144.6 59.3 142.2 58.9C139.9 58.4 134.7 58.0 132.9 57.5C131.1 57.0 132.1 57.5 131.5 56.0C130.9 54.5 130.2 51.0 129.2 48.2C128.3 45.5 126.8 42.1 125.6 39.8C124.5 37.4 123.8 36.1 122.4 34.0C121.0 31.9 119.0 29.2 117.1 27.0C115.3 24.8 112.9 22.6 111.2 21.0C109.6 19.4 108.7 18.8 107.1 17.6C105.6 16.5 104.4 15.6 102.0 14.2C99.6 12.9 95.7 10.9 92.8 9.8C89.8 8.6 86.8 7.8 84.1 7.1C81.5 6.5 80.3 6.1 76.8 5.9C73.2 5.7 66.0 5.7 62.6 5.9C59.2 6.1 59.0 6.4 56.4 7.0C53.8 7.6 50.5 8.4 47.1 9.8C43.8 11.1 39.0 13.6 36.1 15.2ZM110.0 72.5C110.5 72.6 110.8 71.3 110.9 73.8C111.0 76.2 110.9 83.3 110.6 87.1C110.4 90.9 110.1 93.0 109.4 96.5C108.6 100.0 107.4 104.9 106.2 108.2C105.1 111.6 104.0 113.9 102.6 116.5C101.2 119.1 99.5 121.9 97.8 124.0C96.0 126.1 93.7 128.2 92.4 129.4C91.1 130.5 90.5 130.7 89.9 131.0C89.3 131.3 89.1 131.2 88.8 131.0C88.4 130.8 88.1 130.5 88.0 129.8C87.9 129.0 87.7 129.4 87.9 126.2C88.1 123.1 88.7 114.4 89.1 110.8C89.5 107.1 89.8 106.7 90.4 104.1C91.0 101.6 91.9 98.2 92.9 95.4C93.9 92.6 95.1 89.7 96.2 87.4C97.4 85.1 98.5 83.5 99.9 81.6C101.2 79.8 103.0 77.8 104.4 76.4C105.8 75.0 107.2 73.8 108.1 73.1C109.1 72.5 109.5 72.4 110.0 72.5ZM73.4 14.0C76.0 14.2 78.4 14.7 80.6 15.4C82.9 16.0 84.9 16.9 86.9 18.0C88.9 19.1 90.7 20.3 92.5 21.8C94.3 23.2 96.0 24.8 97.6 26.9C99.3 29.0 101.1 31.8 102.5 34.2C103.9 36.8 104.9 39.1 105.9 41.9C106.9 44.6 107.9 48.0 108.5 50.9C109.1 53.8 109.7 57.7 109.8 59.4C109.8 61.0 109.5 60.3 108.6 60.9C107.7 61.4 106.5 61.5 104.2 62.6C102.0 63.7 97.9 65.9 95.2 67.5C92.6 69.1 90.7 70.7 88.6 72.5C86.6 74.3 85.1 75.5 83.0 78.1C80.9 80.7 77.7 85.1 75.9 88.1C74.0 91.1 73.1 93.0 71.9 96.0C70.6 99.0 69.2 103.4 68.4 106.1C67.5 108.9 67.3 109.9 66.9 112.6C66.4 115.4 65.8 118.7 65.6 122.5C65.4 126.3 65.8 133.0 65.6 135.4C65.5 137.7 65.2 136.3 64.9 136.5C64.5 136.7 64.5 136.9 63.5 136.8C62.5 136.6 60.1 136.2 58.6 135.8C57.1 135.3 56.0 134.9 54.6 134.2C53.2 133.6 51.5 132.6 50.2 131.9C49.0 131.1 48.4 130.6 47.2 129.6C46.1 128.7 44.8 127.5 43.6 126.2C42.5 125.0 41.8 124.4 40.4 122.2C39.0 120.1 36.8 116.7 35.4 113.6C33.9 110.5 32.8 107.7 31.8 103.8C30.7 99.8 29.6 93.6 29.1 90.0C28.6 86.4 28.7 85.5 28.6 82.1C28.5 78.7 28.5 72.9 28.6 69.6C28.7 66.3 28.8 65.1 29.1 62.2C29.5 59.4 29.8 56.4 30.6 52.8C31.5 49.1 33.0 43.9 34.1 40.6C35.3 37.4 36.2 35.6 37.6 33.1C39.1 30.7 40.8 28.2 42.8 26.0C44.8 23.8 47.9 21.1 49.6 19.8C51.4 18.4 51.8 18.3 53.1 17.6C54.4 17.0 55.6 16.3 57.5 15.8C59.4 15.2 62.1 14.4 64.8 14.1C67.4 13.8 70.7 13.8 73.4 14.0Z"/>
+      </svg>
+    </a>
+
+    <nav class="nav-right">
       <a href="#contact" class="btn-outline">Contact</a>
     </nav>
   </header>
@@ -64,94 +72,85 @@
       </ol>
     </section>
 
-<section id="about" class="section about-section">
-  <div class="about-intro">
-    <p class="eyebrow">About</p>
-    <h2>Built on better systems</h2>
-    <p class="lead">O’Reilly &amp; Co. helps businesses work smarter by combining practical technology with clear thinking. No hype, just systems that deliver meaningful results.</p>
-  </div>
+    <section id="about" class="section about-section">
+      <div class="about-intro">
+        <p class="eyebrow">About</p>
+        <h2>Built on better systems</h2>
+        <p class="lead">O’Reilly &amp; Co. helps businesses work smarter by combining practical technology with clear thinking. No hype, just systems that deliver meaningful results.</p>
+      </div>
 
-  <div class="values-heading">
-    <p class="eyebrow">Company Values</p>
-    <h2>What We Stand For</h2>
-  </div>
+      <div class="values-heading">
+        <p class="eyebrow">Company Values</p>
+        <h2>What We Stand For</h2>
+      </div>
 
-  <div class="values-grid">
-    <article class="value-card">
-      <p class="num">01</p>
-      <h3>Modern Solutions</h3>
-      <p class="value-subtitle">Practical &amp; Current</p>
-      <p>We use current tools and clear thinking to solve problems the right way, not just the familiar way. Technology and analytics are only valuable when they are applied with purpose, so we choose approaches that are practical, efficient, and built to last.</p>
-    </article>
+      <div class="values-grid">
+        <article class="value-card">
+          <p class="num">01</p>
+          <h3>Modern Solutions</h3>
+          <p class="value-subtitle">Practical &amp; Current</p>
+          <p>We use current tools and clear thinking to solve problems the right way, not just the familiar way. Technology and analytics are only valuable when they are applied with purpose, so we choose approaches that are practical, efficient, and built to last.</p>
+        </article>
+        <article class="value-card">
+          <p class="num">02</p>
+          <h3>Meaningful Results</h3>
+          <p class="value-subtitle">Outcomes That Matter</p>
+          <p>We measure success by outcomes that matter to you, not by how busy we look. Every project begins with a clear goal, and we stay focused on delivering something you can see, use, and build on long after we're done.</p>
+        </article>
+        <article class="value-card">
+          <p class="num">03</p>
+          <h3>Integrity</h3>
+          <p class="value-subtitle">Honest &amp; Accountable</p>
+          <p>We are honest about what we can deliver, and we deliver what we promise. If a timeline is tight or an idea won't work, we tell you early, because trust is built on straight answers and follow-through.</p>
+        </article>
+        <article class="value-card">
+          <p class="num">04</p>
+          <h3>Service First</h3>
+          <p class="value-subtitle">Lead by Serving</p>
+          <p>We lead by serving. Every project starts with listening and understanding the people it's for, and we treat your success as the measure of our own. Good work is about helping others move forward.</p>
+        </article>
+        <article class="value-card">
+          <p class="num">05</p>
+          <h3>Always Learning</h3>
+          <p class="value-subtitle">Growth Mindset</p>
+          <p>We keep growing our skills so our work keeps getting sharper. When we meet a problem we haven't solved before, we dig in, learn what it takes, and bring that knowledge back to every project that follows.</p>
+        </article>
+        <article class="value-card">
+          <p class="num">06</p>
+          <h3>Tailored to You</h3>
+          <p class="value-subtitle">Never a Template</p>
+          <p>No templates and no one-size-fits-all. We take the time to understand your goals, your audience, and your constraints, then shape every solution around your situation so it feels like it was made for you.</p>
+        </article>
+      </div>
+    </section>
 
-    <article class="value-card">
-      <p class="num">02</p>
-      <h3>Meaningful Results</h3>
-      <p class="value-subtitle">Outcomes That Matter</p>
-      <p>We measure success by outcomes that matter to you, not by how busy we look. Every project begins with a clear goal, and we stay focused on delivering something you can see, use, and build on long after we're done.</p>
-    </article>
+    <section id="projects" class="section">
+      <p class="eyebrow">Projects</p>
+      <h2>Selected Work</h2>
+      <p class="lead">Data, analytics, and audit projects, plus the founder's personal portfolio.</p>
+      <div class="repo-grid">
+        <article class="repo-card">
+          <h3>Specialty Pharma Revenue Dashboard</h3>
+          <p class="repo-role">Business Intelligence Analyst · March 2026</p>
+          <p class="repo-desc">Interactive Power BI dashboard analyzing 8 quarters of epinephrine auto-injector market data across 3 products. A pandas pipeline in Python builds the clean dataset, and KPI cards, trendlines and slicers show competitive market share.</p>
+          <div class="repo-tags"><span>Power BI</span><span>Python</span><span>pandas</span></div>
+        </article>
+        <article class="repo-card">
+          <h3>AAPL Trend &amp; Volatility Tracker</h3>
+          <p class="repo-role">Data Engineer · February 2026</p>
+          <p class="repo-desc">An Azure Data Factory pipeline refreshes the data daily at 99.9% automation, feeding an Azure SQL database with cleaned views covering 40+ years. DAX measures drive risk metrics such as 200-day moving averages and YoY volatility in a Power BI dashboard.</p>
+          <div class="repo-tags"><span>Azure</span><span>SQL</span><span>DAX</span><span>Power BI</span></div>
+        </article>
+        <a class="repo-card" href="https://jacksoreilly25.github.io" target="_blank" rel="noopener noreferrer">
+          <h3>Founder's Portfolio Website</h3>
+          <p class="repo-role">Designer &amp; Developer · Ongoing</p>
+          <p class="repo-desc">Our founder's student portfolio site, built with HTML, CSS and JavaScript and hosted on GitHub Pages.</p>
+          <div class="repo-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        </a>
+      </div>
+    </section>
 
-    <article class="value-card">
-      <p class="num">03</p>
-      <h3>Integrity</h3>
-      <p class="value-subtitle">Honest &amp; Accountable</p>
-      <p>We are honest about what we can deliver, and we deliver what we promise. If a timeline is tight or an idea won't work, we tell you early, because trust is built on straight answers and follow-through.</p>
-    </article>
-
-    <article class="value-card">
-      <p class="num">04</p>
-      <h3>Service First</h3>
-      <p class="value-subtitle">Lead by Serving</p>
-      <p>We lead by serving. Every project starts with listening and understanding the people it's for, and we treat your success as the measure of our own. Good work is about helping others move forward.</p>
-    </article>
-
-    <article class="value-card">
-      <p class="num">05</p>
-      <h3>Always Learning</h3>
-      <p class="value-subtitle">Growth Mindset</p>
-      <p>We keep growing our skills so our work keeps getting sharper. When we meet a problem we haven't solved before, we dig in, learn what it takes, and bring that knowledge back to every project that follows.</p>
-    </article>
-
-    <article class="value-card">
-      <p class="num">06</p>
-      <h3>Tailored to You</h3>
-      <p class="value-subtitle">Never a Template</p>
-      <p>No templates and no one-size-fits-all. We take the time to understand your goals, your audience, and your constraints, then shape every solution around your situation so it feels like it was made for you.</p>
-    </article>
-  </div>
-
-
-</section>
-<section id="projects" class="section">
-  <p class="eyebrow">Projects</p>
-  <h2>Selected Work</h2>
-  <p class="lead">Data, analytics, and audit projects, plus the founder's personal portfolio.</p>
-
-  <div class="repo-grid">
-    <article class="repo-card">
-      <h3>Specialty Pharma Revenue Dashboard</h3>
-      <p class="repo-role">Business Intelligence Analyst · March 2026</p>
-      <p class="repo-desc">Interactive Power BI dashboard analyzing 8 quarters of epinephrine auto-injector market data across 3 products. A pandas pipeline in Python builds the clean dataset, and KPI cards, trendlines and slicers show competitive market share.</p>
-      <div class="repo-tags"><span>Power BI</span><span>Python</span><span>pandas</span></div>
-    </article>
-
-    <article class="repo-card">
-      <h3>AAPL Trend &amp; Volatility Tracker</h3>
-      <p class="repo-role">Data Engineer · February 2026</p>
-      <p class="repo-desc">An Azure Data Factory pipeline refreshes the data daily at 99.9% automation, feeding an Azure SQL database with cleaned views covering 40+ years. DAX measures drive risk metrics such as 200-day moving averages and YoY volatility in a Power BI dashboard.</p>
-      <div class="repo-tags"><span>Azure</span><span>SQL</span><span>DAX</span><span>Power BI</span></div>
-    </article>
-
-    <a class="repo-card" href="https://jacksoreilly25.github.io" target="_blank" rel="noopener noreferrer">
-      <h3>Founder's Portfolio Website</h3>
-      <p class="repo-role">Designer &amp; Developer · Ongoing</p>
-      <p class="repo-desc">Our founder's student portfolio site, built with HTML, CSS and JavaScript and hosted on GitHub Pages.</p>
-      <div class="repo-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-    </a>
-  </div>
-</section>
-
-    <section id="" class="section contact">
+    <section id="contact" class="section contact">
       <h2>Let’s build something better.</h2>
       <p class="lead">Tell us about your business and where you want to go.</p>
       <a href="mailto:oreillyandco.llc@gmail.com" class="btn light">oreillyandco.llc@gmail.com</a>
@@ -161,9 +160,12 @@
   <footer>
     <p class="wordmark">O’REILLY &amp; CO.</p>
     <p class="small">Modern solutions. Meaningful results.</p>
-    
     <p class="small">© O'Reilly & Co. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
 </body>
 </html>
