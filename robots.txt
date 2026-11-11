@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://oreilly-and.co/sitemap.xml
+Sitemap: https://www.oreilly-and.co/sitemap.xml
