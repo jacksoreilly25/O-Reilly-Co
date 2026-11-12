@@ -341,27 +341,27 @@ nav a.active::after { transform: scaleX(1); }
 }
 .bai-cta:hover { background: #f5f0e6; }
 
-/* Services: 3 equal columns */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
-  align-items: stretch;
+/* Services: 3 cards side by side */
+#services .grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 48px !important;
+  align-items: start;
 }
 
-/* Reset any spanning that pushed Data into column 2 */
-.services-grid > * {
-  grid-row: auto !important;
+#services .grid .card {
   grid-column: auto !important;
+  grid-row: auto !important;
+  margin: 0 !important;
 }
 
-/* Tablet: 2 columns, Data card spans full width underneath */
+/* Tablet: 2 columns, Data spans the full width underneath */
 @media (max-width: 1000px) {
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .services-grid > *:nth-child(3) { grid-column: 1 / -1 !important; }
+  #services .grid { grid-template-columns: repeat(2, 1fr) !important; }
+  #services .grid .card:nth-child(3) { grid-column: 1 / -1 !important; }
 }
 
-/* Phone: stack */
+/* Phone: stack the cards */
 @media (max-width: 640px) {
-  .services-grid { grid-template-columns: 1fr; }
+  #services .grid { grid-template-columns: 1fr !important; }
 }
