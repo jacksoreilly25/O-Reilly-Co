@@ -340,3 +340,28 @@ nav a.active::after { transform: scaleX(1); }
   transition: background 0.2s ease;
 }
 .bai-cta:hover { background: #f5f0e6; }
+
+/* Services: 3 equal columns */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  align-items: stretch;
+}
+
+/* Reset any spanning that pushed Data into column 2 */
+.services-grid > * {
+  grid-row: auto !important;
+  grid-column: auto !important;
+}
+
+/* Tablet: 2 columns, Data card spans full width underneath */
+@media (max-width: 1000px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid > *:nth-child(3) { grid-column: 1 / -1 !important; }
+}
+
+/* Phone: stack */
+@media (max-width: 640px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
