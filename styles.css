@@ -287,3 +287,56 @@ nav a.active::after { transform: scaleX(1); }
 
 @media (max-width: 700px) { .brand-word { font-size: 1.3rem; } }
 @media (prefers-reduced-motion: reduce) { .brand-word, .brand-mark { transition: none; } }
+
+.bai {
+  background: #1f3d2c;
+  color: #f5f0e6;
+  padding: 96px 24px;
+  font-family: Georgia, serif;
+}
+.bai-inner { max-width: 960px; margin: 0 auto; text-align: center; }
+.bai-eyebrow {
+  color: #c8a97e;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+.bai h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0 0 20px; }
+.bai-lead { max-width: 680px; margin: 0 auto 56px; line-height: 1.7; opacity: 0.9; }
+
+.bai-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+  text-align: left;
+}
+.bai-step {
+  border: 1px solid rgba(245, 240, 230, 0.2);
+  padding: 28px;
+  border-radius: 4px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.bai-step:hover { border-color: #c8a97e; transform: translateY(-3px); }
+.bai-step span { color: #c8a97e; font-size: 0.9rem; }
+.bai-step h3 { margin: 8px 0 10px; font-size: 1.3rem; }
+.bai-step p { line-height: 1.6; opacity: 0.85; margin: 0; }
+
+.bai-examples { margin-bottom: 40px; }
+.bai-label { color: #c8a97e; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.bai-examples ul { list-style: none; padding: 0; margin: 16px 0 0; }
+.bai-examples li { font-style: italic; padding: 8px 0; font-size: 1.1rem; }
+
+.bai-note { font-size: 0.95rem; opacity: 0.75; margin-bottom: 28px; }
+.bai-cta {
+  display: inline-block;
+  background: #c8a97e;
+  color: #1f3d2c;
+  padding: 14px 32px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 2px;
+  transition: background 0.2s ease;
+}
+.bai-cta:hover { background: #f5f0e6; }
