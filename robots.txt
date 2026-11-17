@@ -2,3 +2,10 @@ User-agent: *
 Disallow:
 
 Sitemap: https://www.oreilly-and.co/sitemap.xml
+
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Google-CloudVertexBot
+Disallow: /
