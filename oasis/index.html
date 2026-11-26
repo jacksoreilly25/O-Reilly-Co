@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -6,17 +6,16 @@
   <title>OASIS | O’Reilly &amp; Co.</title>
   <meta name="description" content="OASIS is a self-service AI and business intelligence platform in development by O’Reilly &amp; Co.">
   <link rel="canonical" href="https://oreilly-and.co/oasis/">
-  <link rel="icon" type="image/png" href="/favicon.png">
 
   <style>
     :root {
       --green: #1f3d2c;
-      --dark-green: #142b1f;
+      --forest: #142b1f;
       --cream: #f6f1e6;
-      --cream-dark: #efe7d6;
+      --linen: #efe7d6;
       --gold: #b49a6b;
       --light-gold: #d4bd92;
-      --line: #d6cab4;
+      --border: #d6cab4;
       --serif: Georgia, "Times New Roman", serif;
     }
 
@@ -24,37 +23,34 @@
 
     body {
       margin: 0;
-      background: var(--cream);
       color: var(--green);
+      background: var(--cream);
       font: 1rem/1.65 system-ui, sans-serif;
     }
 
     a { color: inherit; }
 
-    a:focus-visible, summary:focus-visible {
+    :focus-visible {
       outline: 2px solid currentColor;
       outline-offset: 4px;
     }
 
     h1, h2, h3 {
       margin: 0 0 0.75rem;
-      font-family: var(--serif);
-      font-weight: 400;
-      line-height: 1.15;
+      font: 400 1.65rem/1.15 var(--serif);
     }
 
     h2 { font-size: clamp(2rem, 5vw, 3.3rem); }
-    h3 { font-size: 1.65rem; }
     p { margin: 0 0 1rem; }
 
     .navigation {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
       gap: 0.75rem 2rem;
       padding: 1rem 7vw;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid var(--border);
     }
 
     .navigation nav {
@@ -74,15 +70,13 @@
       min-height: 72vh;
       padding: clamp(3.5rem, 9vw, 7rem) 6vw;
       text-align: center;
-      background: radial-gradient(ellipse at center, #284b36, var(--dark-green));
+      background: radial-gradient(ellipse at center, #284b36, var(--forest));
       color: var(--cream);
     }
 
-    .oasis-wordmark { margin: 0 0 1rem; }
-
     .oasis-logo {
       display: block;
-      width: min(78vw, 35rem);
+      width: min(84vw, 36rem);
       height: auto;
     }
 
@@ -119,21 +113,11 @@
     }
 
     .button:hover { text-decoration: underline; }
-
-    .button-light {
-      border-color: var(--cream);
-      background: var(--cream);
-      color: var(--dark-green);
-    }
-
-    .button-dark {
-      border-color: var(--green);
-      background: var(--green);
-      color: var(--cream);
-    }
+    .button-light { background: var(--cream); color: var(--forest); }
+    .button-dark { background: var(--green); color: var(--cream); }
 
     .section { padding: clamp(3rem, 8vw, 6rem) 7vw; }
-    .section-alt { background: var(--cream-dark); }
+    .section-alt { background: var(--linen); }
     .inner { max-width: 70rem; margin: 0 auto; }
 
     .grid {
@@ -151,7 +135,7 @@
     .dashboard {
       margin-top: 1.5rem;
       padding: clamp(1rem, 4vw, 2rem);
-      border: 1px solid var(--line);
+      border: 1px solid var(--border);
       background: #fffdf8;
     }
 
@@ -162,13 +146,13 @@
       margin: 1.5rem 0;
     }
 
-    .metrics div { padding: 0.75rem; border: 1px solid var(--line); }
+    .metrics div { padding: 0.75rem; border: 1px solid var(--border); }
     .metrics dt { font-size: 0.875rem; }
     .metrics dd { margin: 0; font: 1.75rem var(--serif); }
 
     details {
       margin-top: 0.65rem;
-      border: 1px solid var(--line);
+      border: 1px solid var(--border);
       background: var(--cream);
     }
 
@@ -186,7 +170,7 @@
 
     .forecast-table th, .forecast-table td {
       padding: 0.4rem;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid var(--border);
       text-align: right;
     }
 
@@ -203,7 +187,6 @@
 
     .price { margin-bottom: 0.5rem; font: 3.5rem var(--serif); }
     .price span { font: 1rem system-ui, sans-serif; }
-
     .early-access { background: var(--green); color: var(--cream); }
     footer { padding: 2rem 7vw; }
   </style>
@@ -222,12 +205,32 @@
 
   <main>
     <section class="hero">
-      <h1 class="oasis-wordmark">
-        <img
-          class="oasis-logo"
-          src="./oasis-logo-reverse.png"
-          alt="OASIS by O’Reilly &amp; Co."
-        >
+      <h1>
+        <svg class="oasis-logo" xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 600 166" role="img"
+             aria-labelledby="oasis-logo-title">
+          <title id="oasis-logo-title">OASIS by O’Reilly &amp; Co.</title>
+          <defs>
+            <mask id="oasis-sunset-cutouts" maskUnits="userSpaceOnUse"
+                  x="0" y="0" width="164" height="166">
+              <rect width="164" height="166" fill="white"/>
+              <path fill="black"
+                    d="M46 103V78c0-29 16-53 36-53s36 24 36 53v25Z"/>
+              <ellipse cx="82" cy="105" rx="55" ry="4"/>
+              <ellipse cx="82" cy="120" rx="41" ry="3.5"/>
+              <ellipse cx="82" cy="133" rx="27" ry="3"/>
+              <ellipse cx="82" cy="144" rx="13" ry="2.5"/>
+            </mask>
+          </defs>
+          <circle cx="82" cy="83" r="72" fill="#f6f1e6"
+                  mask="url(#oasis-sunset-cutouts)"/>
+          <path d="M51 100a31 31 0 0 1 62 0Z" fill="#c5a166"/>
+          <path d="M178 18v130" stroke="#c5a166" stroke-width="3"/>
+          <text x="200" y="103" fill="#f6f1e6" font-family="Georgia, serif"
+                font-weight="700" font-size="104" letter-spacing="2">OASIS</text>
+          <text x="205" y="139" fill="#d4bd92" font-family="Arial, sans-serif"
+                font-weight="700" font-size="19" letter-spacing="5">BY O’REILLY &amp; CO.</text>
+        </svg>
       </h1>
       <p class="full-name">Organizational AI System &amp; Intelligence Solution</p>
       <div class="gold-rule" aria-hidden="true"></div>
@@ -246,7 +249,6 @@
       <div class="inner">
         <h2>Six organizational functions</h2>
         <p>OASIS is currently in development for small businesses.</p>
-
         <div class="grid">
           <article class="card">
             <h3>Compliance</h3>
@@ -279,11 +281,10 @@
     <section class="section section-alt" id="how-it-works">
       <div class="inner">
         <h2>How it works</h2>
-
         <div class="grid">
           <article class="card">
             <h3>Connect</h3>
-            <p>Set up OASIS yourself and choose which sales, inventory, or other business records to connect.</p>
+            <p>Set up OASIS yourself and choose which sales, inventory, or business records to connect.</p>
           </article>
           <article class="card">
             <h3>Ask</h3>
@@ -300,7 +301,7 @@
     <section class="section" id="preview">
       <div class="inner">
         <h2>Explore the dashboard</h2>
-        <p>Open a sample question to see how OASIS could respond.</p>
+        <p>Open a question to see an example response using sample data.</p>
 
         <div class="dashboard">
           <h3>Sales overview</h3>
@@ -338,10 +339,10 @@
             <div class="answer">
               <h3>Six-week cash flow forecast</h3>
               <p>
-                Starting cash is $12,000. With the current payment dates, Week 2 ends
-                $4,000 short. Ask the customer to pay an existing $8,000 invoice in
-                Week 2 instead of Week 3. If they agree, Week 2 ends with $4,000
-                before any reserve-line draw.
+                Starting cash is $12,000. With the current payment dates, Week 2
+                ends $4,000 short. Ask the customer to pay an existing $8,000
+                invoice in Week 2 instead of Week 3. If they agree, Week 2 ends
+                with $4,000 in cash before financing.
               </p>
 
               <table class="forecast-table">
@@ -365,17 +366,17 @@
 
               <p>
                 The earlier payment frees up $8,000 of working cash in Week 2.
-                Six-week sales and recognized revenue stay the same. Both forecasts
-                have $60,000 in customer receipts, $52,000 in operating payments,
-                and $20,000 in ending cash before financing.
+                Six-week sales and recognized revenue stay the same. Both
+                forecasts show $60,000 in customer receipts, $52,000 in
+                operating payments, and $20,000 in ending cash before financing.
               </p>
               <p>
-                <strong>Suggested reserve-line action.</strong> To reach a $5,000 cash
-                buffer, consider drawing $1,000 in Week 2 if the earlier payment is
-                confirmed, or $9,000 if payment stays in Week 3. Check available
-                credit and borrowing costs first. Plan to repay in Week 3 if
-                collections leave enough cash to maintain the buffer. The table
-                excludes interest and fees.
+                <strong>Suggested reserve-line action.</strong> To reach a $5,000
+                cash buffer, consider drawing $1,000 in Week 2 if the earlier
+                payment is confirmed, or $9,000 if payment stays in Week 3.
+                Check available credit and borrowing costs first. Plan to repay
+                in Week 3 if collections leave enough cash to maintain the
+                buffer. The forecast excludes interest and fees.
               </p>
             </div>
           </details>
@@ -399,10 +400,10 @@
       <div class="inner">
         <h2>Request early access</h2>
         <p>Join the waitlist for updates on OASIS availability.</p>
-        <a
-          class="button button-light"
-          href="mailto:oreillyandco.llc@gmail.com?subject=OASIS%20Early%20Access"
-        >Email to Join the Waitlist</a>
+        <a class="button button-light"
+           href="mailto:oreillyandco.llc@gmail.com?subject=OASIS%20Early%20Access">
+          Email to Join the Waitlist
+        </a>
       </div>
     </section>
   </main>
